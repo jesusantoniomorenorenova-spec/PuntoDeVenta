@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PaymentDialog</class>
+ <widget class="QDialog" name="PaymentDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>534</width>
+    <height>674</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cobrar Venta</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog { background:#0288d1; }
+
+QLabel { color:#e3f2fd; font-size:16px; }
+
+/* Tarjeta total */
+QFrame#cardTotal {
+  background:#e3f2fd;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.15);
+}
+
+QLabel#lblAmount {
+  color:#1b2832;
+  font-size:40px;
+  font-weight:600;
+}
+
+/* Caja efectivo */
+QLineEdit#txtCash {
+  background:white;
+  border-radius:12px;
+  padding:10px;
+  border:1px solid rgba(0,0,0,0.2);
+  color:#102027;
+  font-size:20px;
+}
+
+/* Caja cambio */
+QFrame#changeBox {
+  background:#17a54b;
+  border-radius:16px;
+}
+
+QLabel#lblChangeText { color:white; font-weight:600; }
+QLabel#lblChange { color:white; font-size:40px; font-weight:600; }
+
+/* Botones */
+QPushButton {
+  border-radius:12px;
+  padding:12px 16px;
+  font-weight:600;
+}
+
+QPushButton#btnCancel { background:#e53935; color:white; }
+QPushButton#btnPay { background:white; color:#0288d1; }
+QPushButton#btnPay:pressed { background:#f1f8ff; }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="root">
+   <property name="spacing">
+    <number>18</number>
+   </property>
+   <property name="leftMargin">
+    <number>28</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>28</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="lblTitle">
+     <property name="text">
+      <string>RESUMEN DE COBRO</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="cardTotal">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>140</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="cardLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>18</number>
+      </property>
+      <property name="topMargin">
+       <number>16</number>
+      </property>
+      <property name="rightMargin">
+       <number>18</number>
+      </property>
+      <property name="bottomMargin">
+       <number>16</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblTotalText">
+        <property name="text">
+         <string>TOTAL A PAGAR</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblAmount">
+        <property name="text">
+         <string>$ 31.00</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="cashBox">
+     <property name="spacing">
+      <number>8</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblCashText">
+       <property name="text">
+        <string>DINERO RECIBIDO:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="txtCash">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="placeholderText">
+        <string>Ingrese efectivo recibido</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="changeBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>150</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="changeLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>18</number>
+      </property>
+      <property name="topMargin">
+       <number>16</number>
+      </property>
+      <property name="rightMargin">
+       <number>18</number>
+      </property>
+      <property name="bottomMargin">
+       <number>16</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblChangeText">
+        <property name="text">
+         <string>SU CAMBIO</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblChange">
+        <property name="text">
+         <string>$ 0.00</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttons">
+     <property name="spacing">
+      <number>18</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>CANCELAR</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnPay">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>FINALIZAR PAGO</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
