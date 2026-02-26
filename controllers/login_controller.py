@@ -1,5 +1,4 @@
 from PyQt6 import QtWidgets, uic
-import sys
 
 
 
@@ -11,4 +10,17 @@ class LoginController :
         self.window.btn_login.clicked.connect(self.handle_login)
 
         def handle_login(self):
+            username = self.window.txt_username()
+            password = self.window.txt_passaword()
+            if username == " admin" and password == "123":
+                self.window.login_succesful.emit()
+                print("login corecto")
+            else:
+                #print("login incorrecto")
+                QtWidgets.QMessageBox.warning(
+                    self.window,
+                    "abarrotes tec -error",
+                    "login incorrecto"
+                )
+
             print("login button cliked ")
