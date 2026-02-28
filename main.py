@@ -18,7 +18,7 @@ class Login (QtWidgets.QMainWindow):
         is_dark = self.palette().color(QPalette.ColorRole.Window).lightness() <128
         print(f"  dark: {is_dark}")
 
-class Sells (QtWidgets.QMainWindow):
+class Sells(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi("./views/main.ui",self)
